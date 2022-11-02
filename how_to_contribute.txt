@@ -1,0 +1,10 @@
+STEPS TO CONTRIBUTE TO A PUBLIC REPOSITORY:
+
+Repository I am trying to contribute: bitgio/Seconda
+
+Following the steps in the webpage: https://kbroman.org/github_tutorial/pages/fork.html
+
+	IMPORTANT: to clone the Seconda's fork in my GitHub account I used
+	the URL https://github.com/apascual303/Seconda, 
+	not git@github.com:apascual303/Seconda. 
+	In the latter case it somehow it doesn't clone it.

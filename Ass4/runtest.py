@@ -47,16 +47,18 @@ class Test(unittest.TestCase):
     # Test interpolation
     def test_interp(self):
         v5 = val(val.times[5], 3)
-        self.assertAlmostEqual(v5, val[5, 0])
+        self.assertAlmostEqual(v5, val.voltages[5])
         
     # Test plotting
     def test_plot(self):
         vec = np.linspace(min(t), max(t), 200)
-        plt.plot(vec, val(vec), 'r-', label = 'spline')
         val.plot(lab = 'Data', tit = 'Test', plot_style = '-')
+        plt.plot(vec, val(vec, 3), 'r-', label = 'spline')
+        plt.legend()
+        plt.show()
         
 
 if __name__ == '__main__':
-    t, v, e = np.loadtxt('sample_data_file_with_errs.txt')
+    t, v, e = np.loadtxt('sample_data_file_with_errs.txt', unpack = True)
     val = VoltageData(t, v, e)
     unittest.main()

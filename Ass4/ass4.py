@@ -55,10 +55,9 @@ class VoltageData:
             print(value)
             
     def plot(self, ax = None, lab = '', tit = '', rangex = [None, None], rangey = [None, None], colour = None, plot_style = 'o'):
-        plt.axes(arg = ax, label = lab, xlabel = 'times', title = tit, xlim = (rangex[0], rangex[1]), ylabel = 'voltages', ylim = (rangey[0], rangey[1]))
-        plt.errorbar(self._times, self._voltages, yerr = self._errors, ecolor = colour, fmt = plot_style)
-        plt.show()        
-
+        plt.axes(arg = ax, xlabel = 'times', title = tit, xlim = (rangex[0], rangex[1]), ylabel = 'voltages', ylim = (rangey[0], rangey[1]))
+        plt.errorbar(self._times, self._voltages, yerr = self._errors, ecolor = colour, fmt = plot_style, label = lab)
+        
 
 if __name__ == '__main__':
     #x = np.array([1., 2., 3., 4., 5.])

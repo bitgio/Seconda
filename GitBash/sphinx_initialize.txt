@@ -1,0 +1,24 @@
+CREATING A docs FOLDER IN A GITHUB REPOSITORY
+
+1- Go to the local Git repository
+2- Enter the following commands:
+
+$ python -m venv .venv
+
+$ source .venv/Scripts/activate
+
+$ python -m pip install sphinx
+
+$ sphinx-build --version (OPTIONAL, JUST TO CHECK)
+
+$ sphinx-quickstart docs
+...
+> Separate source and build directories (y/n) [n]: *y*
+
+> Project name: whatever_name_has_the_project
+
+> Author name(s): bla bla bla
+
+> Project release []: 1.0
+
+> Project language [en]:

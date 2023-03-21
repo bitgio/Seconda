@@ -40,7 +40,7 @@ class ProbabilityDensityFunction:
     def rand_num(self, amount):
         l = list()            
         for val in range(amount):
-            f = scipy.optimize.root_scalar(lambda x: self.cdf(-np.inf, x) - np.random.uniform(), x0 = -50., x1 = 50., method='secant')
+            f = scipy.optimize.root_scalar(lambda x: self.cdf(-np.inf, x) - np.random.uniform(), x0 = -100., x1 = 100., method='secant')
             l.append(f.root)
         return l
     '''
@@ -82,8 +82,8 @@ class ProbabilityDensityFunction:
         #print(f'The minimum number of random numbers generated in order to have an accuracy of {max} has to be {testing}. Con area: {area}')
         plt.plot(m, l)
         plt.show()
-        plt.hist(v)
-        plt.show()
+        #plt.hist(v)
+        #plt.show()
 
 
 
@@ -98,7 +98,7 @@ if __name__ == '__main__':
     y = ss.norm.pdf(x)
     order = 3
     our_pdf = ProbabilityDensityFunction(x, y, order)
-    our_pdf.inaccuracy(250)
+    our_pdf.inaccuracy(200)
     #alt = np.linspace(-50., 50., 1000)
     #plt.plot(alt, our_pdf.pdf(alt))
     #plt.plot(np.sort(our_pdf.rand_num(100)), our_pdf.pdf(np.sort(our_pdf.rand_num(100))))
